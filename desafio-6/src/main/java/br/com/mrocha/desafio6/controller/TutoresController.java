@@ -13,9 +13,4 @@ public class TutoresController {
     public void cadastrar() {
 
     }
-
-//    @GetMapping
-//    public void listar() {
-//
-//    }
 }

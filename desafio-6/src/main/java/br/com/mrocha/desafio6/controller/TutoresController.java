@@ -56,4 +56,14 @@ public class TutoresController {
 
         }
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity deletarTutor(@PathVariable Long id) {
+        Optional<Tutores> tutor = repository.findById(id);
+        if (tutor.isPresent()) {
+            repository.deleteById(id);
+            return ResponseEntity.ok("Tutor apagado com sucesso");
+        }
+        return ResponseEntity.ok("Tutor nao encontrado");
+    }
 }

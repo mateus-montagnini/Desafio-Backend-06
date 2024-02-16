@@ -5,13 +5,16 @@ import br.com.mrocha.desafio6.model.DadosDetalheTutor;
 import br.com.mrocha.desafio6.model.DadosTutor;
 import br.com.mrocha.desafio6.model.Tutores;
 import br.com.mrocha.desafio6.repository.TutoresRepository;
+import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RestController
@@ -41,5 +44,16 @@ public class TutoresController {
             return ResponseEntity.ok("nao encontrado");
         }
         return ResponseEntity.ok(tutores.stream().map(DadosDetalheTutor::new).collect(Collectors.toList()));
+    }
+
+    @GetMapping("{id}")
+    public ResponseEntity listarPorId(@PathVariable Long id) {
+        try {
+            var tutor = repository.getReferenceById(id);
+            return ResponseEntity.ok(new DadosDetalheTutor(tutor));
+        } catch (EntityNotFoundException e) {
+            return ResponseEntity.ok("Tutor nao encontrado");
+
+        }
     }
 }

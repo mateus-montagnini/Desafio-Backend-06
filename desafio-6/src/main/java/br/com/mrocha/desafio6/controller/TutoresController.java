@@ -1,11 +1,9 @@
 package br.com.mrocha.desafio6.controller;
 
-import br.com.mrocha.desafio6.model.DadosCadastroTutor;
-import br.com.mrocha.desafio6.model.DadosDetalheTutor;
-import br.com.mrocha.desafio6.model.DadosTutor;
-import br.com.mrocha.desafio6.model.Tutores;
+import br.com.mrocha.desafio6.model.*;
 import br.com.mrocha.desafio6.repository.TutoresRepository;
 import jakarta.persistence.EntityNotFoundException;
+import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.crossstore.ChangeSetPersister;
@@ -65,5 +63,22 @@ public class TutoresController {
             return ResponseEntity.ok("Tutor apagado com sucesso");
         }
         return ResponseEntity.ok("Tutor nao encontrado");
+    }
+
+    @RequestMapping(method = {RequestMethod.PUT, RequestMethod.PATCH})
+    @Transactional
+    public ResponseEntity atualizarTutor(@RequestBody @Valid DadosAtualizacaoTutor dados) {
+        try {
+            var tutor = repository.getReferenceById(dados.id());
+
+            if (dados.senha() != null && !dados.senha().equals(dados.confirmacaoSenha())) {
+                return ResponseEntity.ok("Senha e confirtmacao de senha precisam ser iguais");
+            }
+            tutor.atualizarDados(dados);
+
+            return ResponseEntity.ok(new DadosTutor(tutor));
+        } catch (EntityNotFoundException e) {
+            return ResponseEntity.ok("Tutor nao encontrado");
+        }
     }
 }

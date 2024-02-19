@@ -1,10 +1,7 @@
-package br.com.mrocha.desafio6.model;
+package br.com.mrocha.desafio6.tutoresModel;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
 public record DadosCadastroTutor(
         @NotBlank String nome,

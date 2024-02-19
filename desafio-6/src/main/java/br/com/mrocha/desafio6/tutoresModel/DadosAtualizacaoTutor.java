@@ -1,4 +1,4 @@
-package br.com.mrocha.desafio6.model;
+package br.com.mrocha.desafio6.tutoresModel;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;

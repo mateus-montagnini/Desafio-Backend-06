@@ -1,14 +1,12 @@
 package br.com.mrocha.desafio6.controller;
 
-import br.com.mrocha.desafio6.model.*;
+import br.com.mrocha.desafio6.tutoresModel.*;
 import br.com.mrocha.desafio6.repository.TutoresRepository;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -44,7 +42,7 @@ public class TutoresController {
         return ResponseEntity.ok(tutores.stream().map(DadosDetalheTutor::new).collect(Collectors.toList()));
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public ResponseEntity listarPorId(@PathVariable Long id) {
         try {
             var tutor = repository.getReferenceById(id);

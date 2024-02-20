@@ -75,6 +75,17 @@
 	<build>
 		<plugins>
 			<plugin>
+				<groupId>org.flywaydb</groupId>
+				<artifactId>flyway-maven-plugin</artifactId>
+				<version>7.0.0</version>
+				<configuration>
+					<url>jdbc:mysql://localhost/desafio-backend-06</url>
+					<user>root</user>
+					<password>1402#M355i#</password>
+				</configuration>
+			</plugin>
+
+			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>

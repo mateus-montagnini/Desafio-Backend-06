@@ -1,13 +1,10 @@
 package br.com.mrocha.desafio6.controller;
 
 import br.com.mrocha.desafio6.abrigoModel.Abrigo;
-import br.com.mrocha.desafio6.abrigoModel.DadosAbrigo;
-import br.com.mrocha.desafio6.abrigoModel.DadosAtualizacaoAbrigo;
-import br.com.mrocha.desafio6.abrigoModel.DadosCadastroAbrigo;
-import br.com.mrocha.desafio6.petsModel.DadosAtualizacaoPet;
-import br.com.mrocha.desafio6.petsModel.DadosCadastroPet;
-import br.com.mrocha.desafio6.petsModel.DadosPets;
-import br.com.mrocha.desafio6.petsModel.Pets;
+import br.com.mrocha.desafio6.domain.Pets.DadosAtualizacaoPet;
+import br.com.mrocha.desafio6.domain.Pets.DadosCadastroPet;
+import br.com.mrocha.desafio6.domain.Pets.DadosPets;
+import br.com.mrocha.desafio6.domain.Pets.Pets;
 import br.com.mrocha.desafio6.repository.AbrigosRepository;
 import br.com.mrocha.desafio6.repository.PetsRepository;
 import jakarta.persistence.EntityNotFoundException;

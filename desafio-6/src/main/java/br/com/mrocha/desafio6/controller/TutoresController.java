@@ -1,6 +1,6 @@
 package br.com.mrocha.desafio6.controller;
 
-import br.com.mrocha.desafio6.tutoresModel.*;
+import br.com.mrocha.desafio6.domain.Tutores.*;
 import br.com.mrocha.desafio6.repository.TutoresRepository;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;

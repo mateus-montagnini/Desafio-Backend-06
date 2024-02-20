@@ -1,5 +1,7 @@
-package br.com.mrocha.desafio6.tutoresModel;
+package br.com.mrocha.desafio6.domain.Tutores;
 
+import br.com.mrocha.desafio6.domain.Tutores.DadosAtualizacaoTutor;
+import br.com.mrocha.desafio6.domain.Tutores.DadosCadastroTutor;
 import jakarta.persistence.*;
 import lombok.*;
 

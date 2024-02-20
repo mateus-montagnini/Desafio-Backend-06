@@ -1,4 +1,4 @@
-package br.com.mrocha.desafio6.tutoresModel;
+package br.com.mrocha.desafio6.domain.Tutores;
 
 public record DadosDetalheTutor(Long id, String nome, String email) {
 

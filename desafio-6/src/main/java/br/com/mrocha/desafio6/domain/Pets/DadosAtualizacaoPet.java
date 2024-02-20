@@ -1,4 +1,4 @@
-package br.com.mrocha.desafio6.petsModel;
+package br.com.mrocha.desafio6.domain.Pets;
 
 public record DadosAtualizacaoPet(
         Long id,

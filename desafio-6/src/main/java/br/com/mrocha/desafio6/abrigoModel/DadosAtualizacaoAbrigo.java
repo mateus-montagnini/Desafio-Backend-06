@@ -1,9 +1,12 @@
 package br.com.mrocha.desafio6.abrigoModel;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotNull;
+
 public record DadosAtualizacaoAbrigo(
-        Long id,
+        @NotNull Long id,
         String nome,
-        String email,
+        @Email String email,
         String telefone
 ) {
 }

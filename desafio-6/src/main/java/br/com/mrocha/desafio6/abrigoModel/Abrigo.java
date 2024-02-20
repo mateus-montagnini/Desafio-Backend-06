@@ -10,7 +10,7 @@ import lombok.ToString;
 @Data
 @NoArgsConstructor
 @EqualsAndHashCode(of = "id")
-@ToString(of = {"id", "nome", "email"})
+@ToString(of = {"id", "nome", "email", "telefone"})
 @Table(name = "tb_abrigos")
 public class Abrigo {
 
@@ -33,9 +33,9 @@ public class Abrigo {
         this.telefone = abrigo.telefone();
     }
 
-    public void atualizarDados(DadosAtualizacaoAbrigo abrigo) {
-        this.nome = abrigo.nome() != null ? abrigo.nome() : this.nome;
-        this.email = abrigo.email() != null ? abrigo.email() : this.email;
-        this.telefone = abrigo.telefone() != null ? abrigo.telefone() : this.telefone;
+    public void atualizarDados(DadosAtualizacaoAbrigo dados) {
+        this.nome = dados.nome() != null ? dados.nome() : this.nome;
+        this.email = dados.email() != null ? dados.email() : this.email;
+        this.telefone = dados.telefone() != null ? dados.telefone() : this.telefone;
     }
 }

@@ -7,6 +7,7 @@ import br.com.mrocha.desafio6.domain.Pets.Pets;
 import br.com.mrocha.desafio6.repository.PetsRepository;
 import br.com.mrocha.desafio6.repository.TutoresRepository;
 import br.com.mrocha.desafio6.service.AdocaoService;
+import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,13 +16,14 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/pets")
+@RequestMapping("/adocao")
 public class AdocaoController {
 
     @Autowired
     private AdocaoService service;
 
     @PostMapping
+    @Transactional
     public ResponseEntity cadastrar(@RequestBody @Valid DadosCadastroAdocao dados) {
         Adocao adocao = service.cadastraAdocao(dados);
 

@@ -31,7 +31,7 @@ public class AdocaoService {
         Tutores tutor = tutoresRepository.findById(dados.tutorId()).orElseThrow(() -> new IllegalArgumentException("Tutor nao cadastrado"));
 
         Adocao adocao = new Adocao(dados, pet, tutor);
-        adocaoRepository.save((adocao));
+        adocaoRepository.save(adocao);
 
         pet.setAdotado(true);
         return adocao;

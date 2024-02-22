@@ -1,6 +1,6 @@
 package br.com.mrocha.desafio6.controller;
 
-import br.com.mrocha.desafio6.abrigoModel.Abrigo;
+import br.com.mrocha.desafio6.domain.Abrigo.Abrigo;
 import br.com.mrocha.desafio6.domain.Pets.DadosAtualizacaoPet;
 import br.com.mrocha.desafio6.domain.Pets.DadosCadastroPet;
 import br.com.mrocha.desafio6.domain.Pets.DadosPets;

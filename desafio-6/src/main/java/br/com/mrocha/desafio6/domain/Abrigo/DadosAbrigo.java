@@ -1,4 +1,4 @@
-package br.com.mrocha.desafio6.abrigoModel;
+package br.com.mrocha.desafio6.domain.Abrigo;
 
 public record DadosAbrigo(
         Long id,

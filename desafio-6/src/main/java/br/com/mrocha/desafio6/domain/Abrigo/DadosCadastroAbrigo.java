@@ -1,4 +1,4 @@
-package br.com.mrocha.desafio6.abrigoModel;
+package br.com.mrocha.desafio6.domain.Abrigo;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;

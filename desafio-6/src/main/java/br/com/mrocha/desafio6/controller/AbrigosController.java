@@ -1,9 +1,9 @@
 package br.com.mrocha.desafio6.controller;
 
-import br.com.mrocha.desafio6.abrigoModel.Abrigo;
-import br.com.mrocha.desafio6.abrigoModel.DadosAbrigo;
-import br.com.mrocha.desafio6.abrigoModel.DadosAtualizacaoAbrigo;
-import br.com.mrocha.desafio6.abrigoModel.DadosCadastroAbrigo;
+import br.com.mrocha.desafio6.domain.Abrigo.Abrigo;
+import br.com.mrocha.desafio6.domain.Abrigo.DadosAbrigo;
+import br.com.mrocha.desafio6.domain.Abrigo.DadosAtualizacaoAbrigo;
+import br.com.mrocha.desafio6.domain.Abrigo.DadosCadastroAbrigo;
 import br.com.mrocha.desafio6.repository.AbrigosRepository;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;

@@ -1,8 +1,5 @@
 package br.com.mrocha.desafio6.domain.Adocao;
 
-import br.com.mrocha.desafio6.abrigoModel.Abrigo;
-import br.com.mrocha.desafio6.domain.Pets.DadosAtualizacaoPet;
-import br.com.mrocha.desafio6.domain.Pets.DadosCadastroPet;
 import br.com.mrocha.desafio6.domain.Pets.Pets;
 import br.com.mrocha.desafio6.domain.Tutores.Tutores;
 import jakarta.persistence.*;

@@ -1,8 +1,6 @@
 package br.com.mrocha.desafio6.domain.Pets;
 
-import br.com.mrocha.desafio6.abrigoModel.Abrigo;
-import br.com.mrocha.desafio6.domain.Pets.DadosAtualizacaoPet;
-import br.com.mrocha.desafio6.domain.Pets.DadosCadastroPet;
+import br.com.mrocha.desafio6.domain.Abrigo.Abrigo;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

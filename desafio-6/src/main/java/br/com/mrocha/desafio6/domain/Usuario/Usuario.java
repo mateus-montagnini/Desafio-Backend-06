@@ -8,7 +8,9 @@ import lombok.ToString;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 @Entity
 @Data
@@ -28,9 +30,16 @@ public class Usuario implements UserDetails {
     @Column(name = "senha")
     private String senha;
 
+    @ManyToMany
+    @JoinTable(name = "tb_usuarios_perfis",
+            joinColumns = @JoinColumn(name = "usuario_id"),
+            inverseJoinColumns = @JoinColumn(name = "perfil_id"))
+    @Column(name = "perfis")
+    private List<Perfil> perfis = new ArrayList<>();
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        return perfis;
     }
 
     @Override

@@ -2,6 +2,7 @@ package br.com.mrocha.desafio6.domain.Tutores;
 
 import br.com.mrocha.desafio6.domain.Tutores.DadosAtualizacaoTutor;
 import br.com.mrocha.desafio6.domain.Tutores.DadosCadastroTutor;
+import br.com.mrocha.desafio6.domain.Usuario.Usuario;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -11,7 +12,7 @@ import lombok.*;
 @EqualsAndHashCode(of = "id")
 @ToString(of = {"id", "nome", "email"})
 @Table(name = "tb_tutores")
-public class Tutores {
+public class Tutores extends Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -18,6 +18,7 @@ import java.util.List;
 @EqualsAndHashCode(of = "id")
 @ToString(of = {"id", "login", "senha"})
 @Table(name = "tb_usuarios")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Usuario implements UserDetails {
 
     @Id

@@ -1,5 +1,6 @@
 package br.com.mrocha.desafio6.domain.Abrigo;
 
+import br.com.mrocha.desafio6.domain.Usuario.Usuario;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -12,7 +13,7 @@ import lombok.ToString;
 @EqualsAndHashCode(of = "id")
 @ToString(of = {"id", "nome", "email", "telefone"})
 @Table(name = "tb_abrigos")
-public class Abrigo {
+public class Abrigo extends Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

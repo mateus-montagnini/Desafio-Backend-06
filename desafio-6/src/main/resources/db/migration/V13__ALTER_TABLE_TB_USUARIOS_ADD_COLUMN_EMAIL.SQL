@@ -1,0 +1,1 @@
+ALTER TABLE tb_usuarios ADD email varchar(255) not null;

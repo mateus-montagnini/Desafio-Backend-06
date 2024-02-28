@@ -26,10 +26,14 @@ public class Usuario implements UserDetails {
     private Long id;
 
     @Column(name = "login")
-    private String login;
+    protected String login;
 
     @Column(name = "senha")
-    private String senha;
+    protected String senha;
+
+    @Column(name = "email")
+    protected String email;
+
 
     @ManyToMany
     @JoinTable(name = "tb_usuarios_perfis",

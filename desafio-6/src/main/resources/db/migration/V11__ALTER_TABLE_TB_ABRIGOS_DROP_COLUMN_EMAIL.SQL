@@ -1,0 +1,1 @@
+ALTER TABLE tb_abrigos DROP COLUMN email;

@@ -25,13 +25,13 @@ public class Abrigo extends Usuario {
     @Column(name = "telefone")
     private String telefone;
 
-    @Column(name = "email")
-    private String email;
 
     public Abrigo(DadosCadastroAbrigo abrigo) {
         this.nome = abrigo.nome();
         this.email = abrigo.email();
         this.telefone = abrigo.telefone();
+        this.login = abrigo.login();
+        this.senha = abrigo.senha();
     }
 
     public void atualizarDados(DadosAtualizacaoAbrigo dados) {

@@ -7,6 +7,8 @@ import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCrypt;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,6 +22,9 @@ public class TutoresController {
     @Autowired
     private TutoresRepository repository;
 
+    @Autowired
+    private PasswordEncoder encoder;
+
     @PostMapping
     public ResponseEntity cadastrar(@RequestBody @Valid DadosCadastroTutor dados) {
 
@@ -27,7 +32,7 @@ public class TutoresController {
             return ResponseEntity.badRequest().body("Senha precisa ser igual a confirmacao de senha");
         }
 
-        Tutores tutor = new Tutores(dados);
+        Tutores tutor = new Tutores(dados, encoder.encode(dados.senha()));
         repository.save(tutor);
 
         return ResponseEntity.ok(new DadosTutor(tutor));

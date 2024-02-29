@@ -19,11 +19,11 @@ public class Tutores extends Usuario {
     private String nome;
 
 
-    public Tutores(DadosCadastroTutor dados) {
+    public Tutores(DadosCadastroTutor dados, String senhaBcrypt) {
         this.nome = dados.nome();
         this.email = dados.email();
         this.login = dados.login();
-        this.senha = dados.senha();
+        this.senha = senhaBcrypt;
     }
 
     public void atualizarDados(DadosAtualizacaoTutor dados) {

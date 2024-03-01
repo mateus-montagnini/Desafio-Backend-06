@@ -1,7 +1,7 @@
 CREATE TABLE tb_usuarios(
     id bigint not null auto_increment,
-    login not null,
-    senha not null,
+    login varchar(250) not null,
+    senha varchar(150) not null,
 
     primary key(id)
 );

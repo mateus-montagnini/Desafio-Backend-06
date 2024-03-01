@@ -1,10 +1,12 @@
 package br.com.mrocha.desafio6.infra.security;
 
+import br.com.mrocha.desafio6.repository.UsuarioRepository;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
@@ -12,8 +14,10 @@ import org.springframework.web.filter.OncePerRequestFilter;
 import java.io.IOException;
 
 @Component
-public class
-JWTFilter extends OncePerRequestFilter {
+public class JWTFilter extends OncePerRequestFilter {
+
+    @Autowired
+    private UsuarioRepository usuarioRepository;
 
     @Autowired
     private JWTService jwtService;
@@ -23,10 +27,12 @@ JWTFilter extends OncePerRequestFilter {
         var header = request.getHeader("Authorization");
 
         if (header != null) {
-            var tokenValido = jwtService.validaToken(header);
-            if (tokenValido) {
-                SecurityContextHolder.getContext().setAuthentication();
-            }
+            var subject = jwtService.getSubject(header);
+            var usuario = usuarioRepository.findById(subject).get();
+
+            var authentication = new UsernamePasswordAuthenticationToken(usuario.getLogin(), null, usuario.getAuthorities());
+
+            SecurityContextHolder.getContext().setAuthentication(authentication);
         }
 
 

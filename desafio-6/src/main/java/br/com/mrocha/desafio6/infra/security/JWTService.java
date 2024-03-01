@@ -18,7 +18,7 @@ public class JWTService {
     @Value("{api.jwt.issuer}")
     private String issuer;
     public String gerarToken(Authentication authentication) {
-        var usuario = (Usuario) authentication;
+        var usuario = (Usuario) authentication.getPrincipal();
         try {
             Algorithm algorithm = Algorithm.HMAC256(senha);
             return JWT.create()
@@ -30,16 +30,17 @@ public class JWTService {
         }
     }
 
-    public boolean  validaToken(String jwt) { //Long
+    public Long getSubject(String jwt) {
         try {
             Algorithm algorithm = Algorithm.HMAC256(senha);
-            JWT.require(algorithm)
+            return Long.parseLong(JWT.require(algorithm)
                     .withIssuer(issuer)
                     .build()
-                    .verify(jwt);
-            return true;
+                    .verify(jwt)
+                    .getSubject());
+
         } catch (JWTVerificationException exception) {
-            return false;
+            throw new RuntimeException("token invalido ou expirado");
         }
     }
 }

@@ -3,5 +3,5 @@ CREATE TABLE tb_usuarios(
     login not null,
     senha not null,
 
-    primary key(id),
+    primary key(id)
 );

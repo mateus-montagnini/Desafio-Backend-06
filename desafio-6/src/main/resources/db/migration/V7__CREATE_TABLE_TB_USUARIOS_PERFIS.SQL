@@ -4,5 +4,5 @@ CREATE TABLE tb_usuarios_perfis(
 
     foreign key(usuario_id) references tb_usuarios(id),
     foreign key(perfil_id) references tb_perfis(id),
-    primary key(usuario_id, perfil_id),
+    primary key(usuario_id, perfil_id)
 );

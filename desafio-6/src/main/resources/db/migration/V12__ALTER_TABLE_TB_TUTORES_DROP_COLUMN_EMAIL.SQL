@@ -1,1 +1,1 @@
-ALTER TABLE tb_tutores DROP COLUMN email;
+--ALTER TABLE tb_tutores DROP COLUMN email;

@@ -1,1 +1,1 @@
-ALTER TABLE tb_tutores DROP COLUMN senha;
+--ALTER TABLE tb_tutores DROP COLUMN senha;

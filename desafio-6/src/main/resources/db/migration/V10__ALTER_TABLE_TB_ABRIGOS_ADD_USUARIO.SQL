@@ -1,1 +1,1 @@
-ALTER TABLE tb_abrigos ADD FOREIGN KEY(id) REFERENCES tb_usuarios(id);
+--ALTER TABLE tb_abrigos ADD FOREIGN KEY(id) REFERENCES tb_usuarios(id);

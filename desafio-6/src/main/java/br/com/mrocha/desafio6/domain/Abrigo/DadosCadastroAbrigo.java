@@ -6,8 +6,6 @@ import jakarta.validation.constraints.NotNull;
 
 public record DadosCadastroAbrigo(
         @NotNull String nome,
-        @NotBlank String login,
-        @NotBlank String senha,
         @NotNull @Email String email,
         @NotNull String telefone
 ) {

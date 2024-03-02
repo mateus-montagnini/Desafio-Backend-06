@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
+
 @RestController
 @RequestMapping("/adocao")
 public class AdocaoController {
@@ -30,7 +31,7 @@ public class AdocaoController {
         return ResponseEntity.ok(new DadosAdocao(adocao));
     }
 
-        @DeleteMapping("/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity deletarTutor(@PathVariable Long id) {
         service.deletarAdocao(id);
 

@@ -22,9 +22,6 @@ public class TutoresController {
     @Autowired
     private TutoresRepository repository;
 
-    @Autowired
-    private PasswordEncoder encoder;
-
     @PostMapping
     public ResponseEntity cadastrar(@RequestBody @Valid DadosCadastroTutor dados) {
 
@@ -32,7 +29,7 @@ public class TutoresController {
             return ResponseEntity.badRequest().body("Senha precisa ser igual a confirmacao de senha");
         }
 
-        Tutores tutor = new Tutores(dados, encoder.encode(dados.senha()));
+        Tutores tutor = new Tutores(dados);
         repository.save(tutor);
 
         return ResponseEntity.ok(new DadosTutor(tutor));

@@ -1,6 +1,6 @@
 package br.com.mrocha.desafio6.domain.Abrigo;
 
-import br.com.mrocha.desafio6.domain.Usuario.Usuario;
+
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -13,7 +13,7 @@ import lombok.ToString;
 @EqualsAndHashCode(of = "id")
 @ToString(of = {"id", "nome", "email", "telefone"})
 @Table(name = "tb_abrigos")
-public class Abrigo extends Usuario {
+public class Abrigo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,16 +22,18 @@ public class Abrigo extends Usuario {
     @Column(name = "nome")
     private String nome;
 
+    @Column(name = "email")
+    private String email;
+
     @Column(name = "telefone")
     private String telefone;
+
 
 
     public Abrigo(DadosCadastroAbrigo abrigo) {
         this.nome = abrigo.nome();
         this.email = abrigo.email();
         this.telefone = abrigo.telefone();
-        this.login = abrigo.login();
-        this.senha = abrigo.senha();
     }
 
     public void atualizarDados(DadosAtualizacaoAbrigo dados) {

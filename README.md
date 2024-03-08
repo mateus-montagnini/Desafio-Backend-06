@@ -21,6 +21,12 @@ Utilizar a URL: http://localhost:8080 no Postman para poder realizar os testes d
 
 | Verbos HTTP | Endpoints | Ação |
 | --- | --- | --- |
+| POST | /tutores | Registra um novo produto |
+| GET | /tutores | Retorna todos os produtos |
+| GET | /products/id | Retorna o produto indicado pelo id |
+| PUT | /products/id | Atualiza produto indicado pelo id |
+| DELETE | /products/id | Deleta o produto indicado pelo id |
+
 | POST | /products | Registra um novo produto |
 | GET | /products | Retorna todos os produtos |
 | GET | /products/id | Retorna o produto indicado pelo id |
@@ -34,4 +40,4 @@ Utilizar a URL: http://localhost:8080 no Postman para poder realizar os testes d
 * [Maven](https://maven.apache.org/)
 * [Spring](https://spring.io/)
 * [Postman](https://www.postman.com/)
-* [PostgreSQL](https://www.postgresql.org/) 
+* [MySQL](https://www.mysql.com/) 

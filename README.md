@@ -19,19 +19,34 @@ Utilizar a URL: http://localhost:8080 no Postman para poder realizar os testes d
 
 ## API Endpoints
 
-| Verbos HTTP | Endpoints | Ação |
+| Verbos HTTP | Endpoints | Tutores |
 | --- | --- | --- |
-| POST | /tutores | Registra um novo produto |
-| GET | /tutores | Retorna todos os produtos |
-| GET | /products/id | Retorna o produto indicado pelo id |
-| PUT | /products/id | Atualiza produto indicado pelo id |
-| DELETE | /products/id | Deleta o produto indicado pelo id |
+| POST | /tutores | Registra um novo tutor |
+| GET | /tutores | Retorna todos os tutores |
+| GET | /tutores/id | Retorna o tutor indicado pelo id |
+| PUT | /tutores | Atualiza tutor indicado pelo id |
+| DELETE | /tutores/id | Deleta o tutor indicado pelo id |
 
-| POST | /products | Registra um novo produto |
-| GET | /products | Retorna todos os produtos |
-| GET | /products/id | Retorna o produto indicado pelo id |
-| PUT | /products/id | Atualiza produto indicado pelo id |
-| DELETE | /products/id | Deleta o produto indicado pelo id |
+| Verbos HTTP | Endpoints | Abrigos |
+| --- | --- | --- |
+| POST | /abrigos | Registra um novo abrigo |
+| GET | /abrigos | Retorna todos os abrigos |
+| GET | /abrigos/id | Retorna o abrigo indicado pelo id |
+| PUT | /abrigos | Atualiza abrigo indicado pelo id |
+| DELETE | /abrigos/id | Deleta o abrigo indicado pelo id |
+
+| Verbos HTTP | Endpoints | Pets |
+| --- | --- | --- |
+| POST | /pets | Registra um novo pet |
+| GET | /pets | Retorna todos os pets |
+| GET | /pets/id | Retorna o pet indicado pelo id |
+| PUT | /pets | Atualiza pet indicado pelo id |
+| DELETE | /pets/id | Deleta o pet indicado pelo id |
+
+| Verbos HTTP | Endpoints | Adoção |
+| --- | --- | --- |
+| POST | /adocao | Registra uma nova adocao |
+| DELETE | /adocao | Deleta a adocao |
 
 
 ## Tecnologias Usadas
